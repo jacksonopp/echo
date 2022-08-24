@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { supabase } from '../utils/supabaseClient'
 
-type Props = {}
-
-const Auth = (props: Props) => {
+const Auth = () => {
   const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState('')
 
