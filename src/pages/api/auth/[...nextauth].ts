@@ -1,5 +1,5 @@
 import NextAuth, { type NextAuthOptions } from "next-auth";
-// import DiscordProvider from "next-auth/providers/discord";
+import GithubProvider from 'next-auth/providers/github'
 
 // Prisma adapter for NextAuth, optional and can be removed
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
@@ -15,6 +15,9 @@ export const authOptions: NextAuthOptions = {
       }
       return session;
     },
+    redirect({baseUrl}) {
+      return `${baseUrl}/feed`
+    }
   },
   // Configure one or more authentication providers
   adapter: PrismaAdapter(prisma),
@@ -24,6 +27,11 @@ export const authOptions: NextAuthOptions = {
     //   clientSecret: env.DISCORD_CLIENT_SECRET,
     // }),
     // ...add more providers here
+    GithubProvider({
+      clientId: env.GITHUB_ID,
+      clientSecret: env.GITHUB_SECRET,
+
+    })
   ],
 };
 
