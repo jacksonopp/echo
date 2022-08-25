@@ -1,13 +1,9 @@
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
-import React from 'react'
-import LoginDialog from './LoginDialog'
 
 type Props = {}
 
 const LoginCard = (props: Props) => {
-  const [isOpen, setIsOpen] = React.useState(false)
-  const closeModal = () => setIsOpen(false)
 
   const { data: session } = useSession();
 
