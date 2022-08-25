@@ -2,9 +2,9 @@ import React from 'react'
 import LoginCard from '../components/LoginCard'
 import Navbar from '../components/Navbar'
 
-type Props = {}
 
-const Login = (props: Props) => {
+
+const Login = () => {
   return (
     <>
       <Navbar />

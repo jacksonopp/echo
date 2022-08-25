@@ -2,9 +2,8 @@ import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React from 'react'
 
-type Props = {}
 
-const Navbar = (props: Props) => {
+const Navbar = () => {
   const { data: session } = useSession()
 
   return (

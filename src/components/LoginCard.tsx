@@ -1,9 +1,8 @@
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 
-type Props = {}
 
-const LoginCard = (props: Props) => {
+const LoginCard = () => {
 
   const { data: session } = useSession();
 

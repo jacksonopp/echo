@@ -5,7 +5,7 @@ import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar';
 
 
-const feed: NextPage = () => {
+const Feed: NextPage = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -31,4 +31,4 @@ const feed: NextPage = () => {
   )
 }
 
-export default feed
+export default Feed
