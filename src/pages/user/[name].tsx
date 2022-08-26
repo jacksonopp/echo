@@ -1,9 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React from 'react';
 import Layout from '../../components/Layout';
-import NavBar from '../../components/Navbar';
 import { trpc } from '../../utils/trpc';
 
 const UserPage: NextPage = () => {
@@ -26,7 +24,6 @@ const UserPage: NextPage = () => {
           <div className='flex flex-col md:flex-row text-white mx-auto'>
             <div className='flex-1'>
               <h1 className='text-2xl font-bold '>User Page</h1>
-              {/* in a column, the user name, their image, and a bio */}
               <div className='flex flex-col'>
                 <div className='flex flex-row'>
                   <div className='relative h-[250px] w-[250px]'>
@@ -43,7 +40,7 @@ const UserPage: NextPage = () => {
             </div>
             <div className='flex-1'>
               <h1 className='text-2xl font-bold'>Feed</h1>
-              <p>This is the feed. It shows the user's tweets.</p>
+              <p>This is the feed. It shows the user&apos;s tweets.</p>
             </div>
           </div>
         )}
