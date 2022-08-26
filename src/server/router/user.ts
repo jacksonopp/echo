@@ -42,7 +42,8 @@ export const userRouter = createRouter()
         select: {
           username: true,
           id: true
-        }
+        },
+        take: 10
       })
     }
   })
