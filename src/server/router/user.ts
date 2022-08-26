@@ -27,3 +27,22 @@ export const userRouter = createRouter()
       return user
     }
   })
+  .mutation('search-users', {
+    input: z.object({
+      username: z.string()
+    }),
+    async resolve({input}) {
+      console.log('searching for user', input.username)
+      return prisma?.user.findMany({
+        where: {
+          username: {
+            contains: input.username
+          }
+        },
+        select: {
+          username: true,
+          id: true
+        }
+      })
+    }
+  })
