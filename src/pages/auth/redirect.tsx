@@ -3,9 +3,8 @@ import { useRouter } from 'next/router';
 import React, { useEffect } from 'react'
 import { trpc } from '../../utils/trpc';
 
-type Props = {}
 
-const Redirect = (props: Props) => {
+const Redirect = () => {
   const {data: session} = useSession();
   const router = useRouter();
 
