@@ -17,7 +17,7 @@ export const profileRouter = createProtectedRouter()
           id: input.id,
         },
         include: {
-          shoutAccount: true,
+          profile: true,
         },
       });
       return profile;

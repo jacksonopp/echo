@@ -15,9 +15,13 @@ export const authOptions: NextAuthOptions = {
       }
       return session;
     },
-    redirect({baseUrl}) {
-      return `${baseUrl}/feed`
-    }
+    async redirect({baseUrl}) {
+      return `${baseUrl}/auth/redirect`;
+    },
+    signIn({user, account, profile, email, credentials}) {
+      console.log({ user, account, profile, email, credentials });
+      return true;
+    },
   },
   // Configure one or more authentication providers
   adapter: PrismaAdapter(prisma),
@@ -33,6 +37,9 @@ export const authOptions: NextAuthOptions = {
 
     })
   ],
+  pages: {
+    newUser: 'auth/newuser'
+  }
 };
 
 export default NextAuth(authOptions);

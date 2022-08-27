@@ -1,5 +1,5 @@
-import Layout from '../components/Layout'
-import LoginCard from '../components/LoginCard'
+import Layout from '../../components/Layout'
+import LoginCard from '../../components/LoginCard'
 
 
 
