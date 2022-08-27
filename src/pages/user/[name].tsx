@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
@@ -8,6 +9,8 @@ const UserPage: NextPage = () => {
   const {
     query: { name },
   } = useRouter();
+  const {data: session, status} = useSession();
+  console.log({session, status});
 
   const { data, error } = trpc.useQuery(['user.get-user', { username: name as string }]);
 

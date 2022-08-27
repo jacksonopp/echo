@@ -1,4 +1,4 @@
-import { useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import UserSearch, { PartialUser } from './UserSearch'
@@ -32,6 +32,9 @@ const Navbar = () => {
                   Feed
                 </a>
               </Link>
+              <button onClick={() => signOut()} className="block lg:inline-block lg:mt-0 text-white hover:text-gray-400 ml-4">
+                Log Out
+              </button>
             </div>
           ) : (
             <Link href="/login">
